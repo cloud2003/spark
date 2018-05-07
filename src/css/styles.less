@@ -1,20 +1,77 @@
 @import "variables";
 
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
 #app, body, html {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: #f1f2f3;
+  background-color: @bg-base;
+  color: @text-color;
   min-width: 320px;
+
+  font-family: @font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-// header: #14141c
-// body: #13131b
 
 .sidebar {
-  width: 200px;
-  background-color: #1d202c;
-  color: #667074;
+  width: @width-sidebar;
+  background-color: @bg-sidebar;
+  color: @text-color08;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: visible;
+  z-index: 2;
+
+  &__header {
+    height: 65px;
+    line-height: 64px;
+    text-align: center;
+    color: @text-color;
+    background-color: @bg-header;
+    box-shadow: 0 0 1px 1px @text-color01;
+  }
+
   &__nav {
     &__list {}
     &__item {}
   }
+}
+
+.main-container {
+  position: relative;
+  margin-left: @width-sidebar;
+  height: 100%;
+  overflow: auto;
+
+  &__header {
+    height: 65px;
+    color: @text-color;
+    background-color: @bg-header;
+    box-shadow: 0 0 1px 1px @text-color01;
+  }
+}
+
+
+
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px @text-color08;
+}
+::-webkit-scrollbar-thumb {
+  background-color: @text-color;
+  border-radius: 4px;
 }
