@@ -6,6 +6,10 @@
   outline: none;
 }
 
+a {
+  color: @base;
+}
+
 #app, body, html {
   position: relative;
   width: 100%;
@@ -42,8 +46,17 @@
   }
 
   &__nav {
+    padding: 35px;
     &__list {}
-    &__item {}
+    &__item {
+      margin-bottom: 15px;
+
+      &:hover {
+        .router-link-active {
+          color: @text-color;
+        }
+      }
+    }
   }
 }
 
